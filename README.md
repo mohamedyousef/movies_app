@@ -62,8 +62,8 @@ The Movie App utilizes platform-specific code for Android and iOS to execute the
 
 ### ScreenShot 
 <div style="display: flex;"> 
- <img src="./screenshots/Screenshot_1696632720.png" alt="Example Image" style="width: 400px; height: auto; display: inline-block;">
-<img src="./screenshots/Screenshot_1696632720.png" alt="Example Image" style="width: 400px; height: auto; display: inline-block;">
+ <img src="./screenshots/Screenshot_1696632720.png" alt="Example Image" style="width: 300px; height: 300px; display: inline-block;">
+<img src="./screenshots/Screenshot_1696632742.png" alt="Example Image" style="width: 300px; height: 300px; display: inline-block;">
  </div>
 
 ### Todo  
