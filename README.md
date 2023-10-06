@@ -61,7 +61,10 @@ The Movie App handles error states to provide a seamless user experience. It dis
 The Movie App utilizes platform-specific code for Android and iOS to execute the network request for fetching movie data. This code is written in Kotlin for Android and Swift for iOS. By using platform-specific code, the app can leverage platform-specific features and optimize network requests for better performance.
 
 ### ScreenShot 
-
+<div style="display: flex;"> 
+ <img src="./screenshots/Screenshot_1696632720.png" alt="Example Image" style="width: 400px; height: auto; display: inline-block;">
+<img src="./screenshots/Screenshot_1696632720.png" alt="Example Image" style="width: 400px; height: auto; display: inline-block;">
+ </div>
 
 ### Todo  
 1. Remove expiration cached data 
