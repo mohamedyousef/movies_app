@@ -1,6 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:instbug_task/core/cache/app_local_database.dart';
 import 'package:instbug_task/core/config/config.dart';
-import 'package:instbug_task/core/network/interceptor.dart';
+import 'package:instbug_task/core/network/cache_options.dart';
+import 'package:instbug_task/core/network/interceptors/cache_interceptor.dart';
+import 'package:instbug_task/core/network/interceptors/interceptor.dart';
 import 'package:instbug_task/core/network/network.dart';
 import 'package:instbug_task/features/movies/data/mapper/mapper.dart';
 import 'package:instbug_task/features/movies/data/repositories/movies_repository_impl.dart';
@@ -21,11 +24,21 @@ final baseUrlProvider = Provider((ref) {
   }
 });
 
+final appLocalDatabaseProvider = Provider<AppLocalDatabase>((ref) {
+  return AppLocalDatabase.instance;
+});
+
 final networkServiceProvider = Provider(
   (ref) {
+    final appLocalDatabase = ref.watch(appLocalDatabaseProvider);
     return NetworkService(
       baseUrlBuilder: () async => ref.watch(baseUrlProvider),
-    )..addInterceptor(QueryAccessKeyInterceptor());
+      cacheOptions: CacheOptions(
+        store: appLocalDatabase,
+      ),
+    )
+      ..addInterceptor(QueryAccessKeyInterceptor())
+      ..addInterceptor(CacheInterceptor(appLocalDatabase));
   },
 );
 
