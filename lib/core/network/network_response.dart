@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class NetworkResponse<T> {
   final bool _isSuccess;
   final T? _data;
