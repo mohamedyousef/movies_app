@@ -29,7 +29,9 @@ class NetworkRequest {
         "url": baseUrl,
       };
 
-  set baseUrl(String value) => baseUrl = value;
+  set baseUrl(String value) {
+    _baseUrl = value;
+  }
 
   String get baseUrl {
     String url = endPoint;

@@ -58,7 +58,7 @@ class NetworkNativeResponse {
   int? statusCode;
 
   factory NetworkNativeResponse.fromMap(Map<String, dynamic> response) => NetworkNativeResponse(
-        data: jsonDecode(response['data']),
+        data: response['data'],
         statusCode: response['statusCode'],
       );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:instbug_task/core/exceptions/network_error.dart';
+import 'package:instbug_task/core/network/interceptor.dart';
 import 'package:instbug_task/core/network/json_parser.dart';
 import 'package:instbug_task/core/network/network_request.dart';
 import 'package:instbug_task/core/network/network_response.dart';
@@ -10,8 +11,13 @@ class NetworkService {
   static const channelMethod = MethodChannel("com.http");
   final JsonParser _jsonParser = JsonParser();
   final BaseUrlBuilder baseUrlBuilder;
+  final List<Interceptor> _interceptors = [];
 
-  NetworkService(this.baseUrlBuilder);
+  NetworkService({required this.baseUrlBuilder});
+
+  void addInterceptor(Interceptor interceptor) {
+    _interceptors.add(interceptor);
+  }
 
   Future<NetworkResponse<T>> request<T extends Object, K>({
     required NetworkRequest request,
@@ -48,6 +54,9 @@ class NetworkService {
 
   Future<NetworkNativeResponse> _request(NetworkRequest request) async {
     request.baseUrl = await baseUrlBuilder();
+    for (final interceptor in _interceptors) {
+      interceptor.onRequest(request);
+    }
     final Map<String, dynamic>? response = await channelMethod.invokeMapMethod<String, dynamic>(
       request.method,
       request.toMap(),
