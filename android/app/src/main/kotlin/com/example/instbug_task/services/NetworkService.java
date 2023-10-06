@@ -1,5 +1,7 @@
 package com.example.instbug_task.services;
 
+import android.util.Log;
+
 import com.example.instbug_task.models.NetworkResponse;
 
 import java.io.BufferedReader;
@@ -59,6 +61,8 @@ public class NetworkService {
                         while ((line = reader.readLine()) != null) {
                             buffer.append(line).append("\n");
                         }
+
+                        Log.d("testApi", buffer.toString());
 
                         response = new NetworkResponse(buffer.toString(), urlConnection.getResponseCode());
                         callback.onResponse(response);
