@@ -27,7 +27,7 @@ class NetworkError implements Exception {
 
   @override
   String toString() {
-    var msg = 'DioError [$type]: $message';
+    var msg = 'NetworkError [$type]: $message';
     if (error is Error) {
       msg += '\n${(error as Error).stackTrace}';
     }
