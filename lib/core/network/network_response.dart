@@ -39,6 +39,9 @@ class NetworkResponse<T> {
       return failure(_errorType!);
     }
   }
+
+  T? get data => _data;
+  NetworkErrorType? get errorType => _errorType;
 }
 
 enum NetworkErrorType { parsing, notAuthorized, badConnection, internalServerError, other }
