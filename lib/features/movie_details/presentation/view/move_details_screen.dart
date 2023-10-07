@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:instbug_task/features/movies/domain/models/models.dart';
+import 'package:instbug_task/ui_components/image_network.dart';
 
 final singleMovieModelProvider = Provider<MovieModel>((ref) {
   throw UnimplementedError();
@@ -25,7 +26,7 @@ class MovieDetailScreen extends ConsumerWidget {
                 pinned: true,
                 elevation: 0.0,
                 flexibleSpace: FlexibleSpaceBar(
-                    background: Image.network(
+                    background: ImageNetwork(
                   movieModel.poster.originalSize,
                   fit: BoxFit.cover,
                 )),
