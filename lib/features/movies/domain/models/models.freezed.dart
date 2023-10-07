@@ -72,11 +72,10 @@ class _$MovieListCopyWithImpl<$Res, $Val extends MovieList>
 }
 
 /// @nodoc
-abstract class _$$MovieListImplCopyWith<$Res>
-    implements $MovieListCopyWith<$Res> {
-  factory _$$MovieListImplCopyWith(
-          _$MovieListImpl value, $Res Function(_$MovieListImpl) then) =
-      __$$MovieListImplCopyWithImpl<$Res>;
+abstract class _$$_MovieListCopyWith<$Res> implements $MovieListCopyWith<$Res> {
+  factory _$$_MovieListCopyWith(
+          _$_MovieList value, $Res Function(_$_MovieList) then) =
+      __$$_MovieListCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<MovieModel> movies, ListMeta listMeta});
@@ -86,11 +85,11 @@ abstract class _$$MovieListImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MovieListImplCopyWithImpl<$Res>
-    extends _$MovieListCopyWithImpl<$Res, _$MovieListImpl>
-    implements _$$MovieListImplCopyWith<$Res> {
-  __$$MovieListImplCopyWithImpl(
-      _$MovieListImpl _value, $Res Function(_$MovieListImpl) _then)
+class __$$_MovieListCopyWithImpl<$Res>
+    extends _$MovieListCopyWithImpl<$Res, _$_MovieList>
+    implements _$$_MovieListCopyWith<$Res> {
+  __$$_MovieListCopyWithImpl(
+      _$_MovieList _value, $Res Function(_$_MovieList) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +98,7 @@ class __$$MovieListImplCopyWithImpl<$Res>
     Object? movies = null,
     Object? listMeta = null,
   }) {
-    return _then(_$MovieListImpl(
+    return _then(_$_MovieList(
       movies: null == movies
           ? _value._movies
           : movies // ignore: cast_nullable_to_non_nullable
@@ -114,8 +113,8 @@ class __$$MovieListImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MovieListImpl extends _MovieList {
-  const _$MovieListImpl(
+class _$_MovieList extends _MovieList {
+  const _$_MovieList(
       {required final List<MovieModel> movies, required this.listMeta})
       : _movies = movies,
         super._();
@@ -140,7 +139,7 @@ class _$MovieListImpl extends _MovieList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MovieListImpl &&
+            other is _$_MovieList &&
             const DeepCollectionEquality().equals(other._movies, _movies) &&
             (identical(other.listMeta, listMeta) ||
                 other.listMeta == listMeta));
@@ -153,14 +152,14 @@ class _$MovieListImpl extends _MovieList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MovieListImplCopyWith<_$MovieListImpl> get copyWith =>
-      __$$MovieListImplCopyWithImpl<_$MovieListImpl>(this, _$identity);
+  _$$_MovieListCopyWith<_$_MovieList> get copyWith =>
+      __$$_MovieListCopyWithImpl<_$_MovieList>(this, _$identity);
 }
 
 abstract class _MovieList extends MovieList {
   const factory _MovieList(
       {required final List<MovieModel> movies,
-      required final ListMeta listMeta}) = _$MovieListImpl;
+      required final ListMeta listMeta}) = _$_MovieList;
   const _MovieList._() : super._();
 
   @override
@@ -169,7 +168,7 @@ abstract class _MovieList extends MovieList {
   ListMeta get listMeta;
   @override
   @JsonKey(ignore: true)
-  _$$MovieListImplCopyWith<_$MovieListImpl> get copyWith =>
+  _$$_MovieListCopyWith<_$_MovieList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -227,22 +226,21 @@ class _$ListMetaCopyWithImpl<$Res, $Val extends ListMeta>
 }
 
 /// @nodoc
-abstract class _$$ListMetaImplCopyWith<$Res>
-    implements $ListMetaCopyWith<$Res> {
-  factory _$$ListMetaImplCopyWith(
-          _$ListMetaImpl value, $Res Function(_$ListMetaImpl) then) =
-      __$$ListMetaImplCopyWithImpl<$Res>;
+abstract class _$$_ListMetaCopyWith<$Res> implements $ListMetaCopyWith<$Res> {
+  factory _$$_ListMetaCopyWith(
+          _$_ListMeta value, $Res Function(_$_ListMeta) then) =
+      __$$_ListMetaCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int currentPage, int totalPages, int totalResults});
 }
 
 /// @nodoc
-class __$$ListMetaImplCopyWithImpl<$Res>
-    extends _$ListMetaCopyWithImpl<$Res, _$ListMetaImpl>
-    implements _$$ListMetaImplCopyWith<$Res> {
-  __$$ListMetaImplCopyWithImpl(
-      _$ListMetaImpl _value, $Res Function(_$ListMetaImpl) _then)
+class __$$_ListMetaCopyWithImpl<$Res>
+    extends _$ListMetaCopyWithImpl<$Res, _$_ListMeta>
+    implements _$$_ListMetaCopyWith<$Res> {
+  __$$_ListMetaCopyWithImpl(
+      _$_ListMeta _value, $Res Function(_$_ListMeta) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -252,7 +250,7 @@ class __$$ListMetaImplCopyWithImpl<$Res>
     Object? totalPages = null,
     Object? totalResults = null,
   }) {
-    return _then(_$ListMetaImpl(
+    return _then(_$_ListMeta(
       currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
@@ -271,8 +269,8 @@ class __$$ListMetaImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ListMetaImpl extends _ListMeta {
-  const _$ListMetaImpl(
+class _$_ListMeta extends _ListMeta {
+  const _$_ListMeta(
       {required this.currentPage,
       required this.totalPages,
       required this.totalResults})
@@ -294,7 +292,7 @@ class _$ListMetaImpl extends _ListMeta {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ListMetaImpl &&
+            other is _$_ListMeta &&
             (identical(other.currentPage, currentPage) ||
                 other.currentPage == currentPage) &&
             (identical(other.totalPages, totalPages) ||
@@ -310,15 +308,15 @@ class _$ListMetaImpl extends _ListMeta {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListMetaImplCopyWith<_$ListMetaImpl> get copyWith =>
-      __$$ListMetaImplCopyWithImpl<_$ListMetaImpl>(this, _$identity);
+  _$$_ListMetaCopyWith<_$_ListMeta> get copyWith =>
+      __$$_ListMetaCopyWithImpl<_$_ListMeta>(this, _$identity);
 }
 
 abstract class _ListMeta extends ListMeta {
   const factory _ListMeta(
       {required final int currentPage,
       required final int totalPages,
-      required final int totalResults}) = _$ListMetaImpl;
+      required final int totalResults}) = _$_ListMeta;
   const _ListMeta._() : super._();
 
   @override
@@ -329,7 +327,7 @@ abstract class _ListMeta extends ListMeta {
   int get totalResults;
   @override
   @JsonKey(ignore: true)
-  _$$ListMetaImplCopyWith<_$ListMetaImpl> get copyWith =>
+  _$$_ListMetaCopyWith<_$_ListMeta> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -415,11 +413,11 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
 }
 
 /// @nodoc
-abstract class _$$MovieModelImplCopyWith<$Res>
+abstract class _$$_MovieModelCopyWith<$Res>
     implements $MovieModelCopyWith<$Res> {
-  factory _$$MovieModelImplCopyWith(
-          _$MovieModelImpl value, $Res Function(_$MovieModelImpl) then) =
-      __$$MovieModelImplCopyWithImpl<$Res>;
+  factory _$$_MovieModelCopyWith(
+          _$_MovieModel value, $Res Function(_$_MovieModel) then) =
+      __$$_MovieModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -434,11 +432,11 @@ abstract class _$$MovieModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MovieModelImplCopyWithImpl<$Res>
-    extends _$MovieModelCopyWithImpl<$Res, _$MovieModelImpl>
-    implements _$$MovieModelImplCopyWith<$Res> {
-  __$$MovieModelImplCopyWithImpl(
-      _$MovieModelImpl _value, $Res Function(_$MovieModelImpl) _then)
+class __$$_MovieModelCopyWithImpl<$Res>
+    extends _$MovieModelCopyWithImpl<$Res, _$_MovieModel>
+    implements _$$_MovieModelCopyWith<$Res> {
+  __$$_MovieModelCopyWithImpl(
+      _$_MovieModel _value, $Res Function(_$_MovieModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -450,7 +448,7 @@ class __$$MovieModelImplCopyWithImpl<$Res>
     Object? releaseDate = null,
     Object? poster = null,
   }) {
-    return _then(_$MovieModelImpl(
+    return _then(_$_MovieModel(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -477,8 +475,8 @@ class __$$MovieModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MovieModelImpl implements _MovieModel {
-  const _$MovieModelImpl(
+class _$_MovieModel implements _MovieModel {
+  const _$_MovieModel(
       {required this.id,
       required this.title,
       required this.overView,
@@ -505,7 +503,7 @@ class _$MovieModelImpl implements _MovieModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MovieModelImpl &&
+            other is _$_MovieModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.overView, overView) ||
@@ -522,8 +520,8 @@ class _$MovieModelImpl implements _MovieModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
-      __$$MovieModelImplCopyWithImpl<_$MovieModelImpl>(this, _$identity);
+  _$$_MovieModelCopyWith<_$_MovieModel> get copyWith =>
+      __$$_MovieModelCopyWithImpl<_$_MovieModel>(this, _$identity);
 }
 
 abstract class _MovieModel implements MovieModel {
@@ -532,7 +530,7 @@ abstract class _MovieModel implements MovieModel {
       required final String title,
       required final String overView,
       required final String releaseDate,
-      required final ImageModel poster}) = _$MovieModelImpl;
+      required final ImageModel poster}) = _$_MovieModel;
 
   @override
   int get id;
@@ -546,7 +544,7 @@ abstract class _MovieModel implements MovieModel {
   ImageModel get poster;
   @override
   @JsonKey(ignore: true)
-  _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
+  _$$_MovieModelCopyWith<_$_MovieModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -593,22 +591,22 @@ class _$ImageModelCopyWithImpl<$Res, $Val extends ImageModel>
 }
 
 /// @nodoc
-abstract class _$$ImageModelImplCopyWith<$Res>
+abstract class _$$_ImageModelCopyWith<$Res>
     implements $ImageModelCopyWith<$Res> {
-  factory _$$ImageModelImplCopyWith(
-          _$ImageModelImpl value, $Res Function(_$ImageModelImpl) then) =
-      __$$ImageModelImplCopyWithImpl<$Res>;
+  factory _$$_ImageModelCopyWith(
+          _$_ImageModel value, $Res Function(_$_ImageModel) then) =
+      __$$_ImageModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String path});
 }
 
 /// @nodoc
-class __$$ImageModelImplCopyWithImpl<$Res>
-    extends _$ImageModelCopyWithImpl<$Res, _$ImageModelImpl>
-    implements _$$ImageModelImplCopyWith<$Res> {
-  __$$ImageModelImplCopyWithImpl(
-      _$ImageModelImpl _value, $Res Function(_$ImageModelImpl) _then)
+class __$$_ImageModelCopyWithImpl<$Res>
+    extends _$ImageModelCopyWithImpl<$Res, _$_ImageModel>
+    implements _$$_ImageModelCopyWith<$Res> {
+  __$$_ImageModelCopyWithImpl(
+      _$_ImageModel _value, $Res Function(_$_ImageModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -616,7 +614,7 @@ class __$$ImageModelImplCopyWithImpl<$Res>
   $Res call({
     Object? path = null,
   }) {
-    return _then(_$ImageModelImpl(
+    return _then(_$_ImageModel(
       path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
@@ -627,8 +625,8 @@ class __$$ImageModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ImageModelImpl extends _ImageModel {
-  const _$ImageModelImpl({required this.path}) : super._();
+class _$_ImageModel extends _ImageModel {
+  const _$_ImageModel({required this.path}) : super._();
 
   @override
   final String path;
@@ -642,7 +640,7 @@ class _$ImageModelImpl extends _ImageModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ImageModelImpl &&
+            other is _$_ImageModel &&
             (identical(other.path, path) || other.path == path));
   }
 
@@ -652,18 +650,18 @@ class _$ImageModelImpl extends _ImageModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ImageModelImplCopyWith<_$ImageModelImpl> get copyWith =>
-      __$$ImageModelImplCopyWithImpl<_$ImageModelImpl>(this, _$identity);
+  _$$_ImageModelCopyWith<_$_ImageModel> get copyWith =>
+      __$$_ImageModelCopyWithImpl<_$_ImageModel>(this, _$identity);
 }
 
 abstract class _ImageModel extends ImageModel {
-  const factory _ImageModel({required final String path}) = _$ImageModelImpl;
+  const factory _ImageModel({required final String path}) = _$_ImageModel;
   const _ImageModel._() : super._();
 
   @override
   String get path;
   @override
   @JsonKey(ignore: true)
-  _$$ImageModelImplCopyWith<_$ImageModelImpl> get copyWith =>
+  _$$_ImageModelCopyWith<_$_ImageModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

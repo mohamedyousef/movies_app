@@ -75,20 +75,20 @@ class _$ResultCopyWithImpl<T, R, $Res, $Val extends Result<T, R>>
 }
 
 /// @nodoc
-abstract class _$$successImplCopyWith<T, R, $Res> {
-  factory _$$successImplCopyWith(
-          _$successImpl<T, R> value, $Res Function(_$successImpl<T, R>) then) =
-      __$$successImplCopyWithImpl<T, R, $Res>;
+abstract class _$$_successCopyWith<T, R, $Res> {
+  factory _$$_successCopyWith(
+          _$_success<T, R> value, $Res Function(_$_success<T, R>) then) =
+      __$$_successCopyWithImpl<T, R, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$successImplCopyWithImpl<T, R, $Res>
-    extends _$ResultCopyWithImpl<T, R, $Res, _$successImpl<T, R>>
-    implements _$$successImplCopyWith<T, R, $Res> {
-  __$$successImplCopyWithImpl(
-      _$successImpl<T, R> _value, $Res Function(_$successImpl<T, R>) _then)
+class __$$_successCopyWithImpl<T, R, $Res>
+    extends _$ResultCopyWithImpl<T, R, $Res, _$_success<T, R>>
+    implements _$$_successCopyWith<T, R, $Res> {
+  __$$_successCopyWithImpl(
+      _$_success<T, R> _value, $Res Function(_$_success<T, R>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$successImplCopyWithImpl<T, R, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$successImpl<T, R>(
+    return _then(_$_success<T, R>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ class __$$successImplCopyWithImpl<T, R, $Res>
 
 /// @nodoc
 
-class _$successImpl<T, R> extends _success<T, R> {
-  const _$successImpl(this.data) : super._();
+class _$_success<T, R> extends _success<T, R> {
+  const _$_success(this.data) : super._();
 
   @override
   final T data;
@@ -122,7 +122,7 @@ class _$successImpl<T, R> extends _success<T, R> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$successImpl<T, R> &&
+            other is _$_success<T, R> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -133,8 +133,8 @@ class _$successImpl<T, R> extends _success<T, R> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$successImplCopyWith<T, R, _$successImpl<T, R>> get copyWith =>
-      __$$successImplCopyWithImpl<T, R, _$successImpl<T, R>>(this, _$identity);
+  _$$_successCopyWith<T, R, _$_success<T, R>> get copyWith =>
+      __$$_successCopyWithImpl<T, R, _$_success<T, R>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -200,30 +200,30 @@ class _$successImpl<T, R> extends _success<T, R> {
 }
 
 abstract class _success<T, R> extends Result<T, R> {
-  const factory _success(final T data) = _$successImpl<T, R>;
+  const factory _success(final T data) = _$_success<T, R>;
   const _success._() : super._();
 
   T get data;
   @JsonKey(ignore: true)
-  _$$successImplCopyWith<T, R, _$successImpl<T, R>> get copyWith =>
+  _$$_successCopyWith<T, R, _$_success<T, R>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$failureImplCopyWith<T, R, $Res> {
-  factory _$$failureImplCopyWith(
-          _$failureImpl<T, R> value, $Res Function(_$failureImpl<T, R>) then) =
-      __$$failureImplCopyWithImpl<T, R, $Res>;
+abstract class _$$_failureCopyWith<T, R, $Res> {
+  factory _$$_failureCopyWith(
+          _$_failure<T, R> value, $Res Function(_$_failure<T, R>) then) =
+      __$$_failureCopyWithImpl<T, R, $Res>;
   @useResult
   $Res call({R error});
 }
 
 /// @nodoc
-class __$$failureImplCopyWithImpl<T, R, $Res>
-    extends _$ResultCopyWithImpl<T, R, $Res, _$failureImpl<T, R>>
-    implements _$$failureImplCopyWith<T, R, $Res> {
-  __$$failureImplCopyWithImpl(
-      _$failureImpl<T, R> _value, $Res Function(_$failureImpl<T, R>) _then)
+class __$$_failureCopyWithImpl<T, R, $Res>
+    extends _$ResultCopyWithImpl<T, R, $Res, _$_failure<T, R>>
+    implements _$$_failureCopyWith<T, R, $Res> {
+  __$$_failureCopyWithImpl(
+      _$_failure<T, R> _value, $Res Function(_$_failure<T, R>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -231,7 +231,7 @@ class __$$failureImplCopyWithImpl<T, R, $Res>
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$failureImpl<T, R>(
+    return _then(_$_failure<T, R>(
       freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -242,8 +242,8 @@ class __$$failureImplCopyWithImpl<T, R, $Res>
 
 /// @nodoc
 
-class _$failureImpl<T, R> extends _failure<T, R> {
-  const _$failureImpl(this.error) : super._();
+class _$_failure<T, R> extends _failure<T, R> {
+  const _$_failure(this.error) : super._();
 
   @override
   final R error;
@@ -257,7 +257,7 @@ class _$failureImpl<T, R> extends _failure<T, R> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$failureImpl<T, R> &&
+            other is _$_failure<T, R> &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -268,8 +268,8 @@ class _$failureImpl<T, R> extends _failure<T, R> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$failureImplCopyWith<T, R, _$failureImpl<T, R>> get copyWith =>
-      __$$failureImplCopyWithImpl<T, R, _$failureImpl<T, R>>(this, _$identity);
+  _$$_failureCopyWith<T, R, _$_failure<T, R>> get copyWith =>
+      __$$_failureCopyWithImpl<T, R, _$_failure<T, R>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -335,11 +335,11 @@ class _$failureImpl<T, R> extends _failure<T, R> {
 }
 
 abstract class _failure<T, R> extends Result<T, R> {
-  const factory _failure(final R error) = _$failureImpl<T, R>;
+  const factory _failure(final R error) = _$_failure<T, R>;
   const _failure._() : super._();
 
   R get error;
   @JsonKey(ignore: true)
-  _$$failureImplCopyWith<T, R, _$failureImpl<T, R>> get copyWith =>
+  _$$_failureCopyWith<T, R, _$_failure<T, R>> get copyWith =>
       throw _privateConstructorUsedError;
 }
