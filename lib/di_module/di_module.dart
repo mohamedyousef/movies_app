@@ -1,5 +1,6 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:instbug_task/core/cache/app_local_database.dart';
+import 'package:instbug_task/core/cache/hive_cache_store.dart';
 import 'package:instbug_task/core/config/config.dart';
 import 'package:instbug_task/core/network/cache_options.dart';
 import 'package:instbug_task/core/network/interceptors/cache_interceptor.dart';
@@ -24,21 +25,22 @@ final baseUrlProvider = Provider((ref) {
   }
 });
 
-final appLocalDatabaseProvider = Provider<AppLocalDatabase>((ref) {
-  return AppLocalDatabase.instance;
+final hiveCacheStoreProvider = Provider<HiveCacheStore>((ref) {
+  return HiveCacheStore();
 });
 
 final networkServiceProvider = Provider(
   (ref) {
-    final appLocalDatabase = ref.watch(appLocalDatabaseProvider);
+    final hiveCacheStore = ref.watch(hiveCacheStoreProvider);
     return NetworkService(
       baseUrlBuilder: () async => ref.watch(baseUrlProvider),
+      methodChannel: const MethodChannel("com.http"),
       cacheOptions: CacheOptions(
-        store: appLocalDatabase,
+        store: hiveCacheStore,
       ),
     )
       ..addInterceptor(QueryAccessKeyInterceptor())
-      ..addInterceptor(CacheInterceptor(appLocalDatabase));
+      ..addInterceptor(CacheInterceptor(hiveCacheStore));
   },
 );
 

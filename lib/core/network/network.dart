@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:instbug_task/core/cache/app_local_database.dart';
 import 'package:instbug_task/core/exceptions/network_error.dart';
 import 'package:instbug_task/core/network/cache_options.dart';
 import 'package:instbug_task/core/network/interceptors/interceptor.dart';
@@ -10,13 +9,15 @@ import 'package:instbug_task/core/network/network_response.dart';
 typedef BaseUrlBuilder = Future<String> Function();
 
 class NetworkService {
-  static const channelMethod = MethodChannel("com.http");
   final JsonParser _jsonParser = JsonParser();
   final BaseUrlBuilder baseUrlBuilder;
   final List<Interceptor> _interceptors = [];
   final CacheOptions cacheOptions;
+  final MethodChannel? _channelMethod;
+  static const _defaultChannel = MethodChannel("com.http");
 
-  NetworkService({required this.baseUrlBuilder, required this.cacheOptions});
+  NetworkService({MethodChannel? methodChannel, required this.baseUrlBuilder, required this.cacheOptions})
+      : _channelMethod = methodChannel ?? _defaultChannel;
 
   void addInterceptor(Interceptor interceptor) {
     _interceptors.add(interceptor);
@@ -64,7 +65,7 @@ class NetworkService {
 
     response = cacheOptions.get(request);
 
-    response ??= await channelMethod.invokeMapMethod<String, dynamic>(
+    response ??= await _channelMethod?.invokeMapMethod<String, dynamic>(
       request.method,
       request.toMap(),
     );

@@ -1,22 +1,22 @@
-import 'package:instbug_task/core/cache/app_local_database.dart';
+import 'package:instbug_task/core/cache/cache_store.dart';
 import 'package:instbug_task/core/network/interceptors/interceptor.dart';
 import 'package:instbug_task/core/network/network_request.dart';
 import 'package:instbug_task/core/network/network_response.dart';
 
 class CacheInterceptor extends Interceptor {
-  final AppLocalDatabase _appLocalDatabase;
-  CacheInterceptor(this._appLocalDatabase);
+  final CacheStore _cacheStore;
+  CacheInterceptor(this._cacheStore);
 
   @override
   void onResponse(NetworkRequest request, NetworkNativeResponse networkResponse) async {
     if (networkResponse.data != null) {
-      _appLocalDatabase.put<String>(AppLocalDatabase.NETWORK_REQUESTS, request.baseUrl, networkResponse.data!);
+      _cacheStore.put<String>(request.baseUrl, networkResponse.data!);
     }
   }
 
 // todo
   // void clearExpiredCacheEntries(DateTime expirationDate) {
-  //   final cacheBox = Hive.box(AppLocalDatabase.NETWORK_REQUESTS);
+  //   final cacheBox = Hive.box(HiveCacheStore.NETWORK_REQUESTS);
   //   final keysToRemove = <String>[];
 
   //   for (var key in cacheBox.keys) {
