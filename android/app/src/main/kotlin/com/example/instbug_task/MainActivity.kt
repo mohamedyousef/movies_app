@@ -21,20 +21,6 @@ class MainActivity : FlutterActivity() {
             flutterEngine.dartExecutor.binaryMessenger,
             "com.http"
         ).setMethodCallHandler(HttpMethodCallHandler())
-
-
-//        when(call.method){
-//            "get"-> {
-//                val arguments = (call.arguments as? Map<String, Any>)?.toMap()
-//                if(arguments != null) {
-//                    val url = arguments["url"] as? String
-//                    val headers = arguments["headers"] as? Map<String,String>
-//                    val response = NetworkService.get(url,headers)
-//                    result.success(response);
-//                }
-//                result.notImplemented();
-//            }
-//        }
     }
 
 
