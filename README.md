@@ -1,5 +1,7 @@
-# Movie App Task 
+# Movie App Task
+
 This documentation provides an overview of the Movie App, which is built using Flutter. The app fetches movie data from a third-party API, displays a list of movies, shows movie details when a specific movie is clicked, caches data for offline mode, and handles error states.
+
 ## Table of Contents
 
 - [Requirements](#requirements)
@@ -9,7 +11,7 @@ This documentation provides an overview of the Movie App, which is built using F
 - [Offline Mode](#offline-mode)
 - [Error Handling](#error-handling)
 - [Platform-Specific Code](#platform-specific-code)
-- [License](#license)
+- [Todo](#todo)
 
 ### Requirements
 
@@ -61,13 +63,16 @@ The Movie App handles error states to provide a seamless user experience. It dis
 The Movie App utilizes platform-specific code for Android and iOS to execute the network request for fetching movie data. This code is written in Kotlin for Android and Swift for iOS. By using platform-specific code, the app can leverage platform-specific features and optimize network requests for better performance.
 
 ### ScreenShots
+
 <div style="display: flex;"> 
  <img src="./screenshots/Screenshot_1696632720.png" alt="Example Image" style="width: 200px; height: auto; display: inline-block;">
 <img src="./screenshots/Screenshot_1696632742.png" alt="Example Image" style="width: 200px; height: auto; display: inline-block;">
  </div>
 
-### Todo  
-1. Remove expiration cached data 
-2. Support other  http methods ( post - put - delete ) 
-3. Enhance interceptors 
- 
+### Todo
+
+1. Remove expiration cached data
+2. Support other http methods ( post - put - delete )
+3. Enhance interceptors
+4. replace method channel with pigeon
+5. write testable for pigeon
